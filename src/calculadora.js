@@ -17,7 +17,7 @@ class Calculadora {
   }
 
   potencia(base, exponente) {
-    // TODO: Implementar potencia
+    return base ** exponente;
   }
 
   raizCuadrada(numero) {
@@ -38,6 +38,7 @@ console.log('Ejemplo de uso:');
 console.log('\ncalc.sumar(5, 3):', calc.sumar(5, 3));
 console.log('calc.restar(10, 5):', calc.restar(10, 5));
 console.log('calc.multiplicar(10, 2):', calc.multiplicar(10, 2));
+console.log('calc.potencia(2, 3):', calc.potencia(2, 3));
 console.log('\nFunciones disponibles:');
 console.log('- calc.sumar(a, b)');
 console.log('- calc.restar(a, b)');
