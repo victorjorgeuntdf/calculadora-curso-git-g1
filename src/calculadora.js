@@ -4,10 +4,11 @@ class Calculadora {
   }
 
   restar(a, b) {
-    // TODO: Implementar resta
+    return a - b;
   }
 
   multiplicar(a, b) {
+    return a * b;
     // TODO: Implementar multiplicación
   }
 
@@ -34,7 +35,9 @@ const calc = new Calculadora();
 
 console.log('=== Calculadora Simple ===');
 console.log('Ejemplo de uso:');
-console.log('calc.sumar(5, 3):', calc.sumar(5, 3));
+console.log('\ncalc.sumar(5, 3):', calc.sumar(5, 3));
+console.log('calc.restar(10, 5):', calc.restar(10, 5));
+console.log('calc.multiplicar(10, 2):', calc.multiplicar(10, 2));
 console.log('\nFunciones disponibles:');
 console.log('- calc.sumar(a, b)');
 console.log('- calc.restar(a, b)');
