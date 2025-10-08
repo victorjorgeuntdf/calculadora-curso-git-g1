@@ -21,7 +21,7 @@ cd calculadora-curso-git
 
 ## Participantes 👨🏻‍💻
 Leandro Cardenas
-Santiago pisano
+,Santiago pisano
 
 ## 📦 Requisitos
 
@@ -74,5 +74,5 @@ calculadora-curso-git/
 | `restar(a, b)` | ⏳ Pendiente | Resta dos números |
 | `multiplicar(a, b)` | ⏳ Pendiente | Multiplica dos números |
 | `dividir(a, b)` | ⏳ Pendiente | Divide dos números |
-| `potencia(base, exp)` | ⏳ Pendiente | Eleva un número a una potencia |
+| `potencia(base, exp)` | ✅ Pendiente | Eleva un número a una potencia |
 | `raizCuadrada(num)` | ⏳ Pendiente | Calcula la raíz cuadrada |
