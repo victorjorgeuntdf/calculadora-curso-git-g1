@@ -21,6 +21,7 @@ cd calculadora-curso-git
 
 ## Participantes 👨🏻‍💻
 Leandro Cardenas
+Santiago pisano
 
 ## 📦 Requisitos
 
