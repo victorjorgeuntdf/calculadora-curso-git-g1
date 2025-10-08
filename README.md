@@ -19,6 +19,9 @@ cd calculadora-curso-git
 # Solo necesitas tener Node.js instalado
 ```
 
+## Participantes 👨🏻‍💻
+Leandro Cardenas
+
 ## 📦 Requisitos
 
 - Node.js (versión 12 o superior)
