@@ -25,7 +25,12 @@ class Calculadora {
   }
 
   raizCuadrada(numero) {
-    // TODO: Implementar raíz cuadrada
+    //Devolver NaN si el numero es negativo
+    if(numero < 0)
+    {
+      return NaN;
+    }
+    return Math.sqrt(numero);
   }
 }
 
