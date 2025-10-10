@@ -13,10 +13,10 @@ class Calculadora {
   }
 
   dividir(a, b) {
-    //if( b == 0)
-    //{
-     //return "Infinity.";
-    //}
+    if( b == 0)
+    {
+     return Infinity;
+    }
     return a/b;
   }
 
