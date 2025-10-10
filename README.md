@@ -22,7 +22,7 @@ cd calculadora-curso-git
 ## Participantes 👨🏻‍💻
 Leandro Cardenas
 ,Santiago pisano
-,Federico Fuentes
+,Federico Fuentes, Víctor Quispe
 
 ## 📦 Requisitos
 
