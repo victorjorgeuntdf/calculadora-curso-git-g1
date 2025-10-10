@@ -10,7 +10,7 @@ Una calculadora simple de consola desarrollada en JavaScript con cliente interac
 
 ```bash
 # Clonar el repositorio
-git clone <url-del-repositorio>
+git clone https://github.com/victorjorgeuntdf/calculadora-curso-git-g1.git
 
 # Navegar al directorio
 cd calculadora-curso-git
@@ -32,7 +32,7 @@ Leandro Cardenas
 
 ### Cliente Interactivo
 
-Ejecuta el cliente interactivo para usar la calculadora:
+Ejecuta el cliente interactivo que se encuentra en la carpeta "src" para usar la calculadora:
 
 ```bash
 node cliente.js
@@ -76,4 +76,4 @@ calculadora-curso-git/
 | `multiplicar(a, b)` | ⏳ Pendiente | Multiplica dos números |
 | `dividir(a, b)` | ✅ Implementada | Divide dos números |
 | `potencia(base, exp)` | ✅ Pendiente | Eleva un número a una potencia |
-| `raizCuadrada(num)` | ⏳ Pendiente | Calcula la raíz cuadrada |
+| `raizCuadrada(num)` | ✅ Implementada | Calcula la raíz cuadrada |
