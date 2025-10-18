@@ -4,11 +4,11 @@ class Calculadora {
   }
 
   restar(a, b) {
-    return b - a;
+    return a - b;
   }
 
   multiplicar(a, b) {
-    // TODO: Implementar multiplicación
+    return a * b;
   }
 
   dividir(a, b) {
