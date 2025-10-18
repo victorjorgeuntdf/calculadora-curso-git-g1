@@ -11,10 +11,10 @@ class Calculadora {
     // TODO: Implementar multiplicación
   }
 
-  dividir(b, a) {
-    if (a == 0)
-	  throw new Error('No se puede dividir por cero');
-    return b / a;
+  dividir(a, b) {
+    if (b == 0)
+	    throw new Error('No se puede dividir por cero');
+    return a / b;
   }
 
   potencia(base, exponente) {
