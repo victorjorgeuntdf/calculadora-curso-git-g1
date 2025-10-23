@@ -19,6 +19,7 @@ function mostrarMenu() {
   console.log('5. Potencia');
   console.log('6. Raíz Cuadrada');
   console.log('7. Promedio de un arreglo');
+  console.log('8. Número máximo de un arreglo');
   console.log('0. Salir');
   console.log('=================================');
 }
@@ -62,15 +63,15 @@ async function operacionUnNumero(operacion, nombreOperacion) {
 async function operacionPromedioArreglo() {
   const numeros = [];
   let continuar = true;
-
-  console.log("\nIngrese los números del arreglo. Ingrese 0 para finalizar.");
-
+  
+  console.log("\nIngrese los números para promediar. Escriba 'fin' para terminar y calcular.");
+  
   while (continuar) {
     const entrada = await new Promise((resolve) => {
-      rl.question(`Ingrese un número (o '0' para finalizar): `, resolve);
+      rl.question(`Ingrese un número (o 'fin'): `, resolve);
     });
-
-    if (entrada === 0 || entrada === '0') {
+    
+    if (entrada.toLowerCase() === 'fin') {
       continuar = false;
     } else {
       const numero = parseFloat(entrada);
@@ -84,7 +85,30 @@ async function operacionPromedioArreglo() {
   const resultado = calc.promedioArreglo(numeros);
   console.log(`\n✓ Resultado: El promedio de [${numeros.join(', ')}] es ${resultado}`);
 }
+ 
+async function operacionNumeroMaximoArreglo() { 
+  const numeros = [];
+  let continuar = true;
 
+  console.log("\nIngrese los números del arreglo. Ingrese 'salir' para finalizar.");
+
+  while (continuar) {
+    const entrada = await new Promise((resolve) => {
+      rl.question(`Ingrese un número (o 'fin' para finalizar): `, resolve);
+    });
+    if (entrada.toLowerCase() === 'fin') {
+      continuar = false;
+    } else {
+      const numero = parseFloat(entrada);
+      if (!isNaN(numero)) {
+        numeros.push(numero);
+      } else {
+        console.log("Valor invalido, por favor ingrese un número válido.");
+    }
+  }
+}
+  console.log(`\n✓ Resultado: El número máximo de [${numeros.join(', ')}] es ${calc.numeroMaximoArreglo(numeros)}`);
+}
 function getSimboloOperacion(nombre) {
   const simbolos = {
     'suma': '+',
@@ -147,6 +171,10 @@ async function ejecutarOpcion(opcion) {
     
     case '7':
       await operacionPromedioArreglo();
+      break;
+
+    case '8':
+      await operacionNumeroMaximoArreglo();
       break;
 
     case '0':
