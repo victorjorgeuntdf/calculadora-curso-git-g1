@@ -40,6 +40,13 @@ class Calculadora {
     const suma = arr.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
     return suma / arr.length;
   }
+
+  numeroMaximoArreglo(arr) {
+    if (arr.length === 0) {
+      return undefined;
+    }
+    return Math.max(...arr);
+  }
 }
 
 // Exportar para usar en tests
@@ -57,6 +64,7 @@ console.log('calc.restar(10, 5):', calc.restar(10, 5));
 console.log('calc.multiplicar(10, 2):', calc.multiplicar(10, 2));
 console.log('calc.potencia(2, 3):', calc.potencia(2, 3));
 console.log('calc.promedioArreglo([1, 2, 3, 4, 5]):', calc.promedioArreglo([1,2,3,4,5]));
+console.log('calc.numeroMaximoArreglo([1, 9, 3, 5]):', calc.numeroMaximoArreglo([1, 9, 3, 5]));
 console.log('\nFunciones disponibles:');
 console.log('- calc.sumar(a, b)');
 console.log('- calc.restar(a, b)');
@@ -65,3 +73,4 @@ console.log('- calc.dividir(a, b)');
 console.log('- calc.potencia(base, exponente)');
 console.log('- calc.raizCuadrada(numero)');
 console.log('- calc.promedioArreglo(arreglo)');
+console.log('- calc.numeroMaximoArreglo(arreglo)');
