@@ -18,6 +18,7 @@ function mostrarMenu() {
   console.log('4. Dividir');
   console.log('5. Potencia');
   console.log('6. Raíz Cuadrada');
+  console.log('7. Promedio de un arreglo');
   console.log('0. Salir');
   console.log('=================================');
 }
@@ -56,6 +57,32 @@ async function operacionUnNumero(operacion, nombreOperacion) {
   } else {
     console.log(`\n✓ Resultado: √${num} = ${resultado}`);
   }
+}
+
+async function operacionPromedioArreglo() {
+  const numeros = [];
+  let continuar = true;
+
+  console.log("\nIngrese los números del arreglo. Ingrese 0 para finalizar.");
+
+  while (continuar) {
+    const entrada = await new Promise((resolve) => {
+      rl.question(`Ingrese un número (o '0' para finalizar): `, resolve);
+    });
+
+    if (entrada === 0 || entrada === '0') {
+      continuar = false;
+    } else {
+      const numero = parseFloat(entrada);
+      if (!isNaN(numero)) {
+        numeros.push(numero);
+      } else {
+        console.log("Valor invalido, por favor ingrese un número válido.");
+      }
+    }
+  }
+  const resultado = calc.promedioArreglo(numeros);
+  console.log(`\n✓ Resultado: El promedio de [${numeros.join(', ')}] es ${resultado}`);
 }
 
 function getSimboloOperacion(nombre) {
@@ -118,6 +145,10 @@ async function ejecutarOpcion(opcion) {
       );
       break;
     
+    case '7':
+      await operacionPromedioArreglo();
+      break;
+
     case '0':
       console.log('\n¡Hasta luego! 👋');
       rl.close();
