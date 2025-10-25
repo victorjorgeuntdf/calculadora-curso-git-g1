@@ -54,8 +54,8 @@ function pedirNumero(mensaje) {
 }
 
 async function operacionDosNumeros(operacion, nombreOperacion) {
-  const num1 = await pedirNumero('Ingrese el primer número: ');
-  const num2 = await pedirNumero('Ingrese el segundo número: ');
+  const num1 = await pedirNumero('Ingrese el primer número (o "m" para memoria): ');
+  const num2 = await pedirNumero('Ingrese el segundo número (o "m" para memoria): ');
   
   const resultado = operacion(num1, num2);
   
