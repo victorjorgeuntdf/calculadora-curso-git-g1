@@ -4,6 +4,9 @@ Una calculadora simple de consola desarrollada en JavaScript con cliente interac
 ## 📋 Características
 
 - ✅ Operaciones matemáticas básicas
+- 📊 Operaciones con arreglos (promedio, máximo)
+- 📈 Cálculo de porcentaje (X% de Y)
+- 🧠 Memoria interna: guarda el último resultado y lo podés reutilizar en la próxima operación escribiendo `m`
 - 🔄 Cliente interactivo con menú
 
 ## 🚀 Instalación
@@ -30,10 +33,11 @@ Leandro Cardenas, Santiago Pisano, Federico Fuentes, Víctor Quispe
 
 ### Cliente Interactivo
 
-Ejecuta el cliente interactivo que se encuentra en la carpeta "src" para usar la calculadora:
+Ejecuta el cliente interactivo que se encuentra en la carpeta "src":
 
 ```bash
-node cliente.js
+node src/cliente.js
+
 ```
 
 Verás un menú como este:
@@ -42,6 +46,8 @@ Verás un menú como este:
 =================================
      CALCULADORA INTERACTIVA     
 =================================
+Memoria (último resultado): <valor>
+
 1. Sumar
 2. Restar
 3. Multiplicar
@@ -59,7 +65,7 @@ Verás un menú como este:
 ## 📂 Estructura del Proyecto
 
 ```
-calculadora-curso-git/
+calculadora-curso-git-g1/
 ├── src/
 │   ├── calculadora.js
 │   ├── cliente.js
@@ -83,3 +89,4 @@ calculadora-curso-git/
 | `numeroMaximoArreglo([...])` | ✅ Implementada | Devuelve el valor máximo dentro de un arreglo numérico |
 | `porcentaje(a, b)` | ✅ Implementada | Calcula qué porcentaje representa a respecto de b |
 | `factorial(num)` | ✅ Implementada | Calcula el factorial |
+| `getMemoria()` | ✅ Implementada | Devuelve el último resultado calculado |

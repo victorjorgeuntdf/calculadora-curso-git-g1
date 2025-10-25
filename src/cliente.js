@@ -12,6 +12,9 @@ function mostrarMenu() {
   console.log('\n=================================');
   console.log('     CALCULADORA INTERACTIVA     ');
   console.log('=================================');
+  // Mostramos memoria actual
+  console.log(`Memoria (último resultado): ${calc.getMemoria()}`);
+  console.log('---------------------------------');
   console.log('1. Sumar');
   console.log('2. Restar');
   console.log('3. Multiplicar');
@@ -26,9 +29,24 @@ function mostrarMenu() {
   console.log('=================================');
 }
 
+// pedirNumero ahora acepta "m" para usar la memoria
 function pedirNumero(mensaje) {
   return new Promise((resolve) => {
     rl.question(mensaje, (respuesta) => {
+      const raw = respuesta.trim().toLowerCase();
+
+      if (raw === 'm') {
+        const memoria = calc.getMemoria();
+        if (memoria === null || typeof memoria === 'undefined') {
+          console.log('⚠️  Memoria vacía, usando 0');
+          resolve(0);
+        } else {
+          console.log(`↩ Usando memoria: ${memoria}`);
+          resolve(memoria);
+        }
+        return;
+      }
+
       const numero = parseFloat(respuesta);
       resolve(numero);
     });
@@ -36,8 +54,8 @@ function pedirNumero(mensaje) {
 }
 
 async function operacionDosNumeros(operacion, nombreOperacion) {
-  const num1 = await pedirNumero('Ingrese el primer número: ');
-  const num2 = await pedirNumero('Ingrese el segundo número: ');
+  const num1 = await pedirNumero('Ingrese el primer número (o "m" para memoria): ');
+  const num2 = await pedirNumero('Ingrese el segundo número (o "m" para memoria): ');
   
   const resultado = operacion(num1, num2);
   
@@ -49,7 +67,7 @@ async function operacionDosNumeros(operacion, nombreOperacion) {
 }
 
 async function operacionUnNumero(operacion, nombreOperacion) {
-  const num = await pedirNumero('Ingrese el número: ');
+  const num = await pedirNumero('Ingrese el número (o "m" para memoria): ');
   
   const resultado = operacion(num);
   
@@ -58,7 +76,11 @@ async function operacionUnNumero(operacion, nombreOperacion) {
   } else if (isNaN(resultado)) {
     console.log(`\n⚠️  Error: Operación inválida (resultado: NaN)`);
   } else {
-    console.log(`\n✓ Resultado: √${num} = ${resultado}`);
+    if (nombreOperacion === 'raíz cuadrada') {
+      console.log(`\n✓ Resultado: √${num} = ${resultado}`);
+    } else {
+      console.log(`\n✓ Resultado: ${nombreOperacion}(${num}) = ${resultado}`);
+    }
   }
 }
 
@@ -154,9 +176,9 @@ async function ejecutarOpcion(opcion) {
       );
       break;
     
-    case '5':
-      const base = await pedirNumero('Ingrese la base: ');
-      const exponente = await pedirNumero('Ingrese el exponente: ');
+    case '5': {
+      const base = await pedirNumero('Ingrese la base (o "m" para memoria): ');
+      const exponente = await pedirNumero('Ingrese el exponente (o "m" para memoria): ');
       const resultadoPot = calc.potencia(base, exponente);
       
       if (resultadoPot === undefined) {
@@ -165,6 +187,7 @@ async function ejecutarOpcion(opcion) {
         console.log(`\n✓ Resultado: ${base}^${exponente} = ${resultadoPot}`);
       }
       break;
+    }
     
     case '6':
       await operacionUnNumero(

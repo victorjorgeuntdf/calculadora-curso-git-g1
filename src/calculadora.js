@@ -1,68 +1,83 @@
 class Calculadora {
+  constructor() {
+    // Guarda el último resultado numérico calculado
+    this.memoria = null;
+  }
+
+  _guardarEnMemoria(valor) {
+    this.memoria = valor;
+    return valor;
+  }
+
+  getMemoria() {
+    return this.memoria;
+  }
+
   sumar(a, b) {
-    return a + b;
+    return this._guardarEnMemoria(a + b);
   }
 
   restar(a, b) {
-    return a - b;
+    return this._guardarEnMemoria(a - b);
   }
 
   multiplicar(a, b) {
-    return a * b;
+     return this._guardarEnMemoria(a * b);
     // TODO: Implementar multiplicación
   }
 
   dividir(a, b) {
     if( b == 0)
     {
-     return Infinity;
+      return this._guardarEnMemoria(Infinity);
     }
-    return a/b;
+    this._guardarEnMemoria(a / b);
   }
 
   potencia(base, exponente) {
-    return base ** exponente;
+    return this._guardarEnMemoria(base ** exponente);
   }
 
   raizCuadrada(numero) {
     //Devolver NaN si el numero es negativo
     if(numero < 0)
     {
-      return NaN;
+      return this._guardarEnMemoria(NaN);
     }
-    return Math.sqrt(numero);
+    return this._guardarEnMemoria(Math.sqrt(numero))
   }
 
   promedioArreglo(arr) {
     if  (arr.length === 0) {
-      return 0;
+      return this._guardarEnMemoria(0);
     }
     const suma = arr.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
-    return suma / arr.length;
+    return this._guardarEnMemoria(suma / arr.length);
   }
 
   numeroMaximoArreglo(arr) {
     if (arr.length === 0) {
-      return undefined;
+      return this._guardarEnMemoria(undefined);
     }
-    return Math.max(...arr);
+    return this._guardarEnMemoria(Math.max(...arr));
   }
 
   factorial(numero) {
   if (numero < 0) {
-    return "Error: no existe factorial de un número negativo";
+    return this._guardarEnMemoria(NaN);
   }
 
   let resultado = 1;
   for (let i = 1; i <= numero; i++) {
     resultado *= i;
   }
-  return resultado;
+  return this._guardarEnMemoria(resultado);
   }
 
   //TP2-Ej1 b) Añadir la función de porcentaje de a sobre b.
   porcentaje(a, b) {
-    return (a / 100) * b;
+    const resultado = (a / 100) * b;
+    return this._guardarEnMemoria(resultado);
   }
 }
 
