@@ -20,6 +20,7 @@ function mostrarMenu() {
   console.log('6. Raíz Cuadrada');
   console.log('7. Promedio de un arreglo');
   console.log('8. Número máximo de un arreglo');
+  console.log('9. Porcentaje (a es qué % de b)');
   console.log('10. Factorial');
   console.log('0. Salir');
   console.log('=================================');
@@ -110,13 +111,15 @@ async function operacionNumeroMaximoArreglo() {
 }
   console.log(`\n✓ Resultado: El número máximo de [${numeros.join(', ')}] es ${calc.numeroMaximoArreglo(numeros)}`);
 }
+
 function getSimboloOperacion(nombre) {
   const simbolos = {
     'suma': '+',
     'resta': '-',
     'multiplicación': '×',
     'división': '÷',
-    'potencia': '^'
+    'potencia': '^',
+    'porcentaje': '% de'
   };
   return simbolos[nombre] || '';
 }
@@ -178,6 +181,13 @@ async function ejecutarOpcion(opcion) {
       await operacionNumeroMaximoArreglo();
       break;
 
+    case '9':
+      // porcentaje (a es qué % de b)
+      await operacionDosNumeros(
+        (a, b) => calc.porcentaje(a, b),
+        'porcentaje'
+      );
+      break;
     case '10':
       await operacionUnNumero(
         (num) => calc.factorial(num),
