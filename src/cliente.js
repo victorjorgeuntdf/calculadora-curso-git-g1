@@ -20,6 +20,7 @@ function mostrarMenu() {
   console.log('6. Raíz Cuadrada');
   console.log('7. Promedio de un arreglo');
   console.log('8. Número máximo de un arreglo');
+  console.log('10. Factorial');
   console.log('0. Salir');
   console.log('=================================');
 }
@@ -176,6 +177,15 @@ async function ejecutarOpcion(opcion) {
     case '8':
       await operacionNumeroMaximoArreglo();
       break;
+
+    case '10':
+      await operacionUnNumero(
+        (num) => calc.factorial(num),
+        'factorial'
+      );
+      break;
+
+
 
     case '0':
       console.log('\n¡Hasta luego! 👋');
