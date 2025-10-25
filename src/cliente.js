@@ -21,6 +21,8 @@ function mostrarMenu() {
   console.log('7. Promedio de un arreglo');
   console.log('8. Número máximo de un arreglo');
   console.log('10. Factorial');
+  console.log('11. Logaritmo Natural');
+
   console.log('0. Salir');
   console.log('=================================');
 }
@@ -182,6 +184,13 @@ async function ejecutarOpcion(opcion) {
       await operacionUnNumero(
         (num) => calc.factorial(num),
         'factorial'
+      );
+      break;
+
+      case '11':
+      await operacionUnNumero(
+        (num) => calc.logNatural(num),
+        'logaritmo natural'
       );
       break;
 
