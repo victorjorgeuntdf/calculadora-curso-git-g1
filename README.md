@@ -49,7 +49,8 @@ Verás un menú como este:
 5. Potencia
 6. Raíz Cuadrada
 10. Factorial
-11. Logatirmo Natural
+11. Logaritmo Natural
+12. Logaritmo Base 10
 0. Salir
 =================================
 ```
@@ -79,3 +80,4 @@ calculadora-curso-git/
 | `raizCuadrada(num)` | ✅ Implementada | Calcula la raíz cuadrada |
 | `factorial(num)` | ✅ Implementada | Calcula el factorial |
 | `LogaritmoNatural(num)` | ✅ Implementada | Calcula el logaritmo natural |
+| `LogaritmoBase10(num)` | ✅ Implementada | Calcula el logaritmo en base 10 |
