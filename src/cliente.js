@@ -22,6 +22,8 @@ function mostrarMenu() {
   console.log('8. Número máximo de un arreglo');
   console.log('10. Factorial');
   console.log('11. Logaritmo Natural');
+  console.log('12. Logaritmo Base 10');
+  console.log('0. Salir');
 
   console.log('0. Salir');
   console.log('=================================');
@@ -194,6 +196,12 @@ async function ejecutarOpcion(opcion) {
       );
       break;
 
+      case '12':
+      await operacionUnNumero(
+        (num) => calc.logBase10(num),
+        'logaritmo base 10'
+      );
+      break;
 
 
     case '0':
