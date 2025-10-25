@@ -47,6 +47,19 @@ class Calculadora {
     }
     return Math.max(...arr);
   }
+
+factorial(numero) {
+  if (numero < 0) {
+    return "Error: no existe factorial de un número negativo";
+  }
+
+  let resultado = 1;
+  for (let i = 1; i <= numero; i++) {
+    resultado *= i;
+  }
+  return resultado;
+}
+
 }
 
 // Exportar para usar en tests
@@ -65,6 +78,7 @@ console.log('calc.multiplicar(10, 2):', calc.multiplicar(10, 2));
 console.log('calc.potencia(2, 3):', calc.potencia(2, 3));
 console.log('calc.promedioArreglo([1, 2, 3, 4, 5]):', calc.promedioArreglo([1,2,3,4,5]));
 console.log('calc.numeroMaximoArreglo([1, 9, 3, 5]):', calc.numeroMaximoArreglo([1, 9, 3, 5]));
+console.log('calc.factorial(5):', calc.factorial(5));
 console.log('\nFunciones disponibles:');
 console.log('- calc.sumar(a, b)');
 console.log('- calc.restar(a, b)');
@@ -74,3 +88,4 @@ console.log('- calc.potencia(base, exponente)');
 console.log('- calc.raizCuadrada(numero)');
 console.log('- calc.promedioArreglo(arreglo)');
 console.log('- calc.numeroMaximoArreglo(arreglo)');
+console.log('- calc.factorial(numero)');
