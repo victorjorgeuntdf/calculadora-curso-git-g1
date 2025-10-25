@@ -176,9 +176,9 @@ async function ejecutarOpcion(opcion) {
       );
       break;
     
-    case '5':
-      const base = await pedirNumero('Ingrese la base: ');
-      const exponente = await pedirNumero('Ingrese el exponente: ');
+    case '5': {
+      const base = await pedirNumero('Ingrese la base (o "m" para memoria): ');
+      const exponente = await pedirNumero('Ingrese el exponente (o "m" para memoria): ');
       const resultadoPot = calc.potencia(base, exponente);
       
       if (resultadoPot === undefined) {
@@ -187,6 +187,7 @@ async function ejecutarOpcion(opcion) {
         console.log(`\n✓ Resultado: ${base}^${exponente} = ${resultadoPot}`);
       }
       break;
+    }
     
     case '6':
       await operacionUnNumero(
