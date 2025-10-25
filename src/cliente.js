@@ -67,7 +67,7 @@ async function operacionDosNumeros(operacion, nombreOperacion) {
 }
 
 async function operacionUnNumero(operacion, nombreOperacion) {
-  const num = await pedirNumero('Ingrese el número: ');
+  const num = await pedirNumero('Ingrese el número (o "m" para memoria): ');
   
   const resultado = operacion(num);
   
@@ -76,7 +76,11 @@ async function operacionUnNumero(operacion, nombreOperacion) {
   } else if (isNaN(resultado)) {
     console.log(`\n⚠️  Error: Operación inválida (resultado: NaN)`);
   } else {
-    console.log(`\n✓ Resultado: √${num} = ${resultado}`);
+    if (nombreOperacion === 'raíz cuadrada') {
+      console.log(`\n✓ Resultado: √${num} = ${resultado}`);
+    } else {
+      console.log(`\n✓ Resultado: ${nombreOperacion}(${num}) = ${resultado}`);
+    }
   }
 }
 
