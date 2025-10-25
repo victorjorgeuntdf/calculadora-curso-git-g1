@@ -12,6 +12,9 @@ function mostrarMenu() {
   console.log('\n=================================');
   console.log('     CALCULADORA INTERACTIVA     ');
   console.log('=================================');
+  // Mostramos memoria actual
+  console.log(`Memoria (último resultado): ${calc.getMemoria()}`);
+  console.log('---------------------------------');
   console.log('1. Sumar');
   console.log('2. Restar');
   console.log('3. Multiplicar');
@@ -26,9 +29,24 @@ function mostrarMenu() {
   console.log('=================================');
 }
 
+// pedirNumero ahora acepta "m" para usar la memoria
 function pedirNumero(mensaje) {
   return new Promise((resolve) => {
     rl.question(mensaje, (respuesta) => {
+      const raw = respuesta.trim().toLowerCase();
+
+      if (raw === 'm') {
+        const memoria = calc.getMemoria();
+        if (memoria === null || typeof memoria === 'undefined') {
+          console.log('⚠️  Memoria vacía, usando 0');
+          resolve(0);
+        } else {
+          console.log(`↩ Usando memoria: ${memoria}`);
+          resolve(memoria);
+        }
+        return;
+      }
+
       const numero = parseFloat(respuesta);
       resolve(numero);
     });
