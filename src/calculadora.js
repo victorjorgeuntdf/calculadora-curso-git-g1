@@ -62,10 +62,7 @@ class Calculadora {
 
   //TP2-Ej1 b) Añadir la función de porcentaje de a sobre b.
   porcentaje(a, b) {
-    if (b === 0) {
-      return Infinity; //devolver infity si b es 0
-    } 
-    return (a / b) * 100;
+    return (a / 100) * b;
   }
 }
 
