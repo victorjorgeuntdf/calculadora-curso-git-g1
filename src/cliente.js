@@ -15,7 +15,9 @@ function mostrarMenu() {
   // Mostramos memoria actual
   console.log(`Memoria (último resultado): ${calc.getMemoria()}`);
   
-// --- NUEVO: Mostrar Historial ---
+// --- NUEVO: Mostrar Historialde las operaciones ---
+// --- comentarios para el pull request---
+// ---pruebas para el pull request---
   console.log('---------------------------------');
   console.log('Historial Reciente (últimas 5):');
   const historial = calc.getHistorial().slice(-5); // Tomar solo las últimas 5
