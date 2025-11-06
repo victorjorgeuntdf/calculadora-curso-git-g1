@@ -20,6 +20,7 @@ class Calculadora {
   }
 
   restar(a, b) {
+ historial-operaciones
     return this._guardarEnMemoria(a - b);
   }
 
@@ -34,6 +35,19 @@ class Calculadora {
       return this._guardarEnMemoria(Infinity);
     }
     this._guardarEnMemoria(a / b);
+=======
+    return a - b;
+  }
+
+  multiplicar(a, b) {
+    return a * b;
+  }
+
+  dividir(a, b) {
+    if (b == 0)
+	    throw new Error('No se puede dividir por cero');
+    return a / b;
+ 
   }
 
   potencia(base, exponente) {
@@ -133,4 +147,5 @@ console.log('- calc.numeroMaximoArreglo(arreglo)');
 console.log('- calc.factorial(numero)');
 console.log('- calc.porcentaje(a, b)');
 console.log('- calc.resto(a, b)');
+
 
