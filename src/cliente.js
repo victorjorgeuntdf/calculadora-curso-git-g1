@@ -14,6 +14,21 @@ function mostrarMenu() {
   console.log('=================================');
   // Mostramos memoria actual
   console.log(`Memoria (último resultado): ${calc.getMemoria()}`);
+  
+// --- NUEVO: Mostrar Historialde las operaciones ---
+// --- comentarios para el pull request---
+// ---pruebas para el pull request---
+  console.log('---------------------------------');
+  console.log('Historial Reciente (últimas 5):');
+  const historial = calc.getHistorial().slice(-5); // Tomar solo las últimas 5
+  if (historial.length === 0) {
+    console.log(' (Vacío)');
+  } else {
+    historial.forEach((op, index) => {
+      console.log(` ${index + 1}. ${op}`);
+    });
+  }
+
   console.log('---------------------------------');
   console.log('1. Sumar');
   console.log('2. Restar');
@@ -63,7 +78,11 @@ async function operacionDosNumeros(operacion, nombreOperacion) {
   if (resultado === undefined) {
     console.log(`\n⚠️  La función ${nombreOperacion} aún no está implementada`);
   } else {
-    console.log(`\n✓ Resultado: ${num1} ${getSimboloOperacion(nombreOperacion)} ${num2} = ${resultado}`);
+  const simbolo = getSimboloOperacion(nombreOperacion);
+    const textoResultado = `${num1} ${simbolo} ${num2} = ${resultado}`;
+
+    console.log(`\n✓ Resultado: ${textoResultado}`);
+    calc.agregarAlHistorial(textoResultado);
   }
 }
 
@@ -77,11 +96,18 @@ async function operacionUnNumero(operacion, nombreOperacion) {
   } else if (isNaN(resultado)) {
     console.log(`\n⚠️  Error: Operación inválida (resultado: NaN)`);
   } else {
+    let textoResultado = '';
+
     if (nombreOperacion === 'raíz cuadrada') {
       console.log(`\n✓ Resultado: √${num} = ${resultado}`);
     } else {
       console.log(`\n✓ Resultado: ${nombreOperacion}(${num}) = ${resultado}`);
+
+      console.log(`\n✓ Resultado: ${textoResultado}`);
+
+      calc.agregarAlHistorial(textoResultado);
     }
+    calc.agregarAlHistorial(textoResultado);
   }
 }
 
@@ -109,8 +135,13 @@ async function operacionPromedioArreglo() {
   }
   const resultado = calc.promedioArreglo(numeros);
   console.log(`\n✓ Resultado: El promedio de [${numeros.join(', ')}] es ${resultado}`);
+
+  console.log(`\n✓ Resultado: ${textoResultado}`);
+
+  calc.agregarAlHistorial(textoResultado);
 }
  
+
 async function operacionNumeroMaximoArreglo() { 
   const numeros = [];
   let continuar = true;
@@ -132,7 +163,11 @@ async function operacionNumeroMaximoArreglo() {
     }
   }
 }
+  const resultado = calc.numeroMaximoArreglo(numeros);
+
   console.log(`\n✓ Resultado: El número máximo de [${numeros.join(', ')}] es ${calc.numeroMaximoArreglo(numeros)}`);
+
+  console.log(`\n✓ Resultado: ${textoResultado}`)
 }
 
 function getSimboloOperacion(nombre) {

@@ -2,6 +2,8 @@ class Calculadora {
   constructor() {
     // Guarda el último resultado numérico calculado
     this.memoria = null;
+
+    this.historial = [];
   }
 
   _guardarEnMemoria(valor) {
@@ -18,6 +20,7 @@ class Calculadora {
   }
 
   restar(a, b) {
+ historial-operaciones
     return this._guardarEnMemoria(a - b);
   }
 
@@ -32,6 +35,19 @@ class Calculadora {
       return this._guardarEnMemoria(Infinity);
     }
     this._guardarEnMemoria(a / b);
+=======
+    return a - b;
+  }
+
+  multiplicar(a, b) {
+    return a * b;
+  }
+
+  dividir(a, b) {
+    if (b == 0)
+	    throw new Error('No se puede dividir por cero');
+    return a / b;
+ 
   }
 
   potencia(base, exponente) {
@@ -85,7 +101,20 @@ class Calculadora {
     }
     return this._guardarEnMemoria(a % b)
    }
+
+   // NUEVO: Método para añadir una operación al historial
+  agregarAlHistorial(textoOperacion) { // <-- LÍNEA 125
+    this.historial.push(textoOperacion);
+  }
+
+  // NUEVO: Método para obtener el historial
+  getHistorial() { // <-- LÍNEA 130
+    return this.historial;
+  }
 }
+
+
+
 
 // Exportar para usar en tests
 if (typeof module !== 'undefined' && module.exports) {
@@ -118,3 +147,5 @@ console.log('- calc.numeroMaximoArreglo(arreglo)');
 console.log('- calc.factorial(numero)');
 console.log('- calc.porcentaje(a, b)');
 console.log('- calc.resto(a, b)');
+
+
