@@ -139,6 +139,7 @@ async function operacionPromedioArreglo() {
   calc.agregarAlHistorial(textoResultado);
 }
  
+
 async function operacionNumeroMaximoArreglo() { 
   const numeros = [];
   let continuar = true;

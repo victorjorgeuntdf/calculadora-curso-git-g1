@@ -101,6 +101,7 @@ class Calculadora {
 
 
 
+
 // Exportar para usar en tests
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = Calculadora;
