@@ -20,7 +20,6 @@ class Calculadora {
   }
 
   restar(a, b) {
- historial-operaciones
     return this._guardarEnMemoria(a - b);
   }
 
@@ -35,7 +34,7 @@ class Calculadora {
       return this._guardarEnMemoria(Infinity);
     }
     this._guardarEnMemoria(a / b);
-=======
+
     return a - b;
   }
 
