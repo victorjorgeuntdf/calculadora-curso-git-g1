@@ -58,6 +58,7 @@ Memoria (último resultado): <valor>
 8. Número máximo de un arreglo
 9. Porcentaje (a es qué % de b)
 10. Factorial
+11. resto de la division
 0. Salir
 =================================
 ```

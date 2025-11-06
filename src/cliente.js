@@ -25,6 +25,7 @@ function mostrarMenu() {
   console.log('8. Número máximo de un arreglo');
   console.log('9. Porcentaje (a es qué % de b)');
   console.log('10. Factorial');
+  console.log('11. Resto de la división (a % b)');
   console.log('0. Salir');
   console.log('=================================');
 }
@@ -141,7 +142,8 @@ function getSimboloOperacion(nombre) {
     'multiplicación': '×',
     'división': '÷',
     'potencia': '^',
-    'porcentaje': '% de'
+    'porcentaje': '% de',
+    'resto': '%'
   };
   return simbolos[nombre] || '';
 }
@@ -215,6 +217,13 @@ async function ejecutarOpcion(opcion) {
       await operacionUnNumero(
         (num) => calc.factorial(num),
         'factorial'
+      );
+      break;
+      
+      case '11':
+      await operacionDosNumeros(
+        (a, b) => calc.resto(a, b),
+        'resto'
       );
       break;
 
