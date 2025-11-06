@@ -91,3 +91,4 @@ calculadora-curso-git-g1/
 | `porcentaje(a, b)` | ✅ Implementada | Calcula qué porcentaje representa a respecto de b |
 | `factorial(num)` | ✅ Implementada | Calcula el factorial |
 | `getMemoria()` | ✅ Implementada | Devuelve el último resultado calculado |
+| `resto(a, b)` | ✅ Implementada | Calcula el resto de la división |
